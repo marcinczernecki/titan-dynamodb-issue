@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="titanConfigurationProvider" class="com.hybris.titan.TitanConfigurationProvider">
+		<property name="properties">
+			<props>
+				<prop key="storage.backend">com.amazon.titan.diskstorage.dynamodb.DynamoDBStoreManager</prop>
+				<prop key="storage.dynamodb.client.endpoint">https://dynamodb.eu-central-1.amazonaws.com</prop>
+				<prop key="storage.dynamodb.prefix">test2</prop>
+				<prop key="storage.dynamodb.client.credentials.class-name">com.amazonaws.auth.DefaultAWSCredentialsProviderChain</prop>
+				<prop key="storage.dynamodb.client.credentials.constructor-args"></prop>
+
+				<prop key="query.fast-property">true</prop>
+				<prop key="query.force-index">false</prop>
+			</props>
+		</property>
+	</bean>
+
+</beans>
